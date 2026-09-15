@@ -59,7 +59,11 @@ blockquote cite{display:block;margin-top:10px;font-style:normal;font-family:-app
 .contact{background:var(--green);color:#f3efe6}
 .contact a{color:#fff}
 .contact h2{color:#fff}
-.contact .row{display:flex;flex-wrap:wrap;gap:36px;margin-top:20px;font-size:18px}
+.contact .row{display:flex;flex-wrap:wrap;gap:36px;margin-top:22px;font-size:17px}
+.ask{display:grid;gap:12px;max-width:520px;margin-top:22px}
+.ask label{display:grid;gap:6px;font-size:14px;color:#dfe8e1}
+.ask input,.ask textarea{font:inherit;font-size:16px;padding:10px 12px;border:1px solid #6c8577;border-radius:8px;background:#fff;color:var(--ink)}
+.ask button{justify-self:start;font:inherit;font-weight:600;padding:12px 20px;border:0;border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
 footer{padding:28px 0 48px;color:var(--muted);font-size:14px}
 footer a{color:var(--muted)}
 .muted{color:var(--muted)}
@@ -153,7 +157,7 @@ footer a{color:var(--muted)}
     <h2 style="font-size:34px">How to book</h2>
     <p style="max-width:60ch;margin-top:12px">We host stays of 30 nights or more. Book direct and you skip the platform fees; returning guests get first call on dates. We can also be found on Airbnb if you'd rather book there.</p>
     <div class="steps">
-      <div class="step"><b>1. Ask</b><p>Text, call, or email with your dates and which unit you'd like. We answer the same day.</p></div>
+      <div class="step"><b>1. Ask</b><p>Send your dates and which unit you'd like using the form below. We answer the same day.</p></div>
       <div class="step"><b>2. Agree</b><p>You get a short furnished-stay agreement to sign and a card payment link. No deposit for most stays.</p></div>
       <div class="step"><b>3. Arrive</b><p>Keypad codes arrive the day before check-in, set fresh for your stay. Check-in from 3 PM, checkout by 11 AM.</p></div>
     </div>
@@ -163,10 +167,16 @@ footer a{color:var(--muted)}
 <section id="contact" class="contact">
   <div class="wrap">
     <h2 style="font-size:34px">Contact</h2>
-    <p style="margin-top:10px;max-width:60ch">John Durkin, De Longpre Enterprises LLC. We live nearby and are around if you need anything.</p>
+    <p style="margin-top:10px;max-width:60ch">Tell us your dates and which home you'd like. We answer the same day. We live nearby and are around during your stay if you need anything.</p>
+    <form class="ask" action="https://formspree.io/f/REPLACE_FORM_ID" method="POST">
+      <label>Name<input name="name" required autocomplete="name"></label>
+      <label>Email<input name="email" type="email" required autocomplete="email"></label>
+      <label>Dates and which home<textarea name="message" rows="3" required placeholder="Oct 22 to Nov 22, Cherokee, 2 adults"></textarea></label>
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+      <button type="submit">Send</button>
+    </form>
     <div class="row">
-      <span>Text or call <a href="tel:+12137936549">213-793-6549</a></span>
-      <span>Email <a href="mailto:john.durkin@gmail.com">john.durkin@gmail.com</a></span>
+      <span>Email <a href="mailto:stay@hollywoodhideaways.com">stay@hollywoodhideaways.com</a></span>
       <span>Airbnb: <a href="https://airbnb.com/h/delongpre">De Longpre</a> · <a href="https://airbnb.com/h/cherokee">Cherokee</a></span>
     </div>
   </div>
