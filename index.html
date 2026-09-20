@@ -67,6 +67,24 @@ blockquote cite{display:block;margin-top:10px;font-style:normal;font-family:-app
 .ask .consent{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:#dfe8e1;line-height:1.4}
 .ask .consent input{margin-top:3px;width:auto}
 .ask button{justify-self:start;font:inherit;font-weight:600;padding:12px 20px;border:0;border-radius:8px;background:var(--paper);color:var(--ink);cursor:pointer}
+.ask button[disabled]{opacity:.5;cursor:not-allowed}
+.ask fieldset{border:0;margin:0;padding:0;display:grid;gap:6px}
+.ask legend{font-size:14px;color:#dfe8e1;padding:0;margin-bottom:4px}
+.ask .pick{display:flex;flex-wrap:wrap;gap:8px}
+.ask .pick label{display:flex;align-items:center;gap:8px;font-size:16px;color:#fff;background:rgba(255,255,255,.08);border:1px solid #6c8577;border-radius:8px;padding:9px 14px;cursor:pointer}
+.ask .pick input{width:auto;margin:0}
+.ask .pick input:checked+span{font-weight:600}
+.ask .pick label:has(input:checked){background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.ask .dates{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.ask .avail{margin:0;min-height:1.4em;font-size:15px;color:#dfe8e1}
+.ask .avail.open{color:#c8f0d0}
+.ask .avail.taken{color:#ffd0c2}
+.ask .avail.note{color:#f5e6b8}
+.ask .general{display:flex;gap:10px;align-items:center;font-size:15px;color:#dfe8e1}
+.ask .general input{width:auto;margin:0}
+.ask.is-general .dates,.ask.is-general .avail{display:none}
+.ask .status{margin:0;font-size:15px;color:#f5e6b8}
+.ask .done{font-family:Georgia,serif;font-size:22px;color:#fff}
 footer{padding:28px 0 48px;color:var(--muted);font-size:14px}
 footer a{color:var(--muted)}
 .muted{color:var(--muted)}
@@ -80,7 +98,7 @@ footer a{color:var(--muted)}
   <div class="wrap">
     <h1>Hidden in the middle of Hollywood.</h1>
     <p class="sub">Two private garden bungalows in a 1916 duplex, behind a ten-foot hedge, two blocks from Sunset. Furnished stays of a month or more.</p>
-    <a class="cta" href="#book">Book direct</a>
+    <a class="cta" href="#contact">Check dates</a>
   </div>
 </header>
 
@@ -117,7 +135,7 @@ footer a{color:var(--muted)}
             <li>Bathroom with skylight, rainfall shower, and tub</li>
             <li>Street permit included; gated driveway parking available</li>
           </ul>
-          <a class="book" href="#book">Check dates</a>
+          <a class="book" href="#contact" data-unit="delongpre">Check dates</a>
         </div>
       </article>
 
@@ -137,7 +155,7 @@ footer a{color:var(--muted)}
             <li>Bathroom with skylight, rainfall shower, and Carrara marble bench</li>
             <li>Street permit included; gated driveway parking available</li>
           </ul>
-          <a class="book" href="#book">Check dates</a>
+          <a class="book" href="#contact" data-unit="cherokee">Check dates</a>
         </div>
       </article>
 
@@ -160,7 +178,7 @@ footer a{color:var(--muted)}
     <h2 style="font-size:34px">How to book</h2>
     <p style="max-width:60ch;margin-top:12px">We host stays of 30 nights or more. Book direct and you skip the platform fees; returning guests get first call on dates. We can also be found on Airbnb if you'd rather book there.</p>
     <div class="steps">
-      <div class="step"><b>1. Ask</b><p>Send your dates and which unit you'd like using the form below. We answer the same day.</p></div>
+      <div class="step"><b>1. Ask</b><p>Pick your dates below. The form checks them against our calendar as you go, and we answer the same day.</p></div>
       <div class="step"><b>2. Agree</b><p>You get a short furnished-stay agreement to sign and a card payment link. No deposit for most stays.</p></div>
       <div class="step"><b>3. Arrive</b><p>Keypad codes arrive the day before check-in, set fresh for your stay. Check-in from 3 PM, checkout by 11 AM.</p></div>
     </div>
@@ -170,14 +188,31 @@ footer a{color:var(--muted)}
 <section id="contact" class="contact">
   <div class="wrap">
     <h2 style="font-size:34px">Contact</h2>
-    <p style="margin-top:10px;max-width:60ch">Tell us your dates and which home you'd like. We answer the same day. We live nearby and are around during your stay if you need anything.</p>
-    <form class="ask" action="https://formspree.io/f/REPLACE_FORM_ID" method="POST">
+    <p style="margin-top:10px;max-width:60ch">Pick a home and your dates. We check them against our calendar right here, and we answer every inquiry the same day. We live nearby and are around during your stay if you need anything.</p>
+    <form class="ask" id="inquiry" action="https://formspree.io/f/xgavoyao" method="POST" novalidate>
+      <fieldset>
+        <legend>Which home</legend>
+        <div class="pick">
+          <label><input type="radio" name="unit" value="delongpre" checked><span>De Longpre</span></label>
+          <label><input type="radio" name="unit" value="cherokee"><span>Cherokee</span></label>
+          <label><input type="radio" name="unit" value="either"><span>Either</span></label>
+        </div>
+      </fieldset>
+      <div class="dates">
+        <label>Arrive<input name="arrive" type="date" required></label>
+        <label>Depart<input name="depart" type="date" required></label>
+      </div>
+      <p class="avail" id="avail" aria-live="polite"></p>
+      <label class="general"><input type="checkbox" name="general" id="general" value="yes"> I don't have dates yet. Send a general inquiry.</label>
       <label>Name<input name="name" required autocomplete="name"></label>
-      <label>Email<input name="email" type="email" required autocomplete="email"></label>
-      <label>Dates and which home<textarea name="message" rows="3" required placeholder="Oct 22 to Nov 22, Cherokee, 2 adults"></textarea></label>
+      <label>Email<input name="_replyto" type="email" required autocomplete="email"></label>
+      <input type="hidden" name="_subject" id="subject" value="Inquiry from hollywoodhideaways.com">
+      <label>Phone (optional)<input name="phone" type="tel" autocomplete="tel"></label>
+      <label>Anything else? (optional)<textarea name="message" rows="3" placeholder="2 adults, one small dog, arriving from New York"></textarea></label>
       <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
       <label class="consent"><input type="checkbox" name="consent" value="yes" required> I agree that Hollywood Hideaways may use these details to answer my inquiry, as described in the <a href="/privacy.html">privacy notice</a>.</label>
-      <button type="submit">Send</button>
+      <button type="submit" id="send">Send inquiry</button>
+      <p class="status" id="status" aria-live="polite"></p>
     </form>
     <div class="row">
       <span>Email <a href="mailto:stay@hollywoodhideaways.com">stay@hollywoodhideaways.com</a></span>
@@ -192,5 +227,66 @@ footer a{color:var(--muted)}
   </div>
 </footer>
 
+<script>
+(function(){
+  var form=document.getElementById('inquiry'),avail=document.getElementById('avail'),status=document.getElementById('status'),
+      send=document.getElementById('send'),general=document.getElementById('general'),
+      arrive=form.arrive,depart=form.depart,cal=null,NAMES={delongpre:'De Longpre',cherokee:'Cherokee'};
+  var today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+  var iso=today.toISOString().slice(0,10);arrive.min=iso;depart.min=iso;
+
+  fetch('/availability.json',{cache:'no-cache'}).then(function(r){return r.json()}).then(function(j){cal=j.units;check();}).catch(function(){});
+
+  function overlaps(ranges,a,d){for(var i=0;i<ranges.length;i++){if(a<ranges[i][1]&&d>ranges[i][0])return true}return false}
+  function unit(){return form.querySelector('input[name=unit]:checked').value}
+  function nights(a,d){return Math.round((new Date(d)-new Date(a))/864e5)}
+  function fmt(s){var d=new Date(s+'T12:00:00');return d.toLocaleDateString(undefined,{month:'short',day:'numeric',year:'numeric'})}
+
+  function check(){
+    avail.className='avail';send.disabled=false;
+    if(general.checked){avail.textContent='';return}
+    var a=arrive.value,d=depart.value;
+    if(a)depart.min=a;
+    if(!a||!d){avail.textContent='';return}
+    var n=nights(a,d);
+    if(n<1){avail.textContent='Departure must be after arrival.';avail.classList.add('taken');send.disabled=true;return}
+    if(!cal){avail.textContent=n+' nights. We will check the calendar when we reply.';return}
+    var u=unit(),keys=u==='either'?['delongpre','cherokee']:[u],open=[],taken=[],beyond=[];
+    keys.forEach(function(k){var c=cal[k]||{blocked:[],window:null};
+      if(overlaps(c.blocked,a,d))taken.push(NAMES[k]);
+      else if(c.window&&overlaps([c.window],a,d))beyond.push(NAMES[k]);
+      else open.push(NAMES[k]);});
+    var msg;
+    if(open.length){msg=open.join(' and ')+(open.length>1?' are':' is')+' open, '+n+' nights.';avail.classList.add('open')}
+    else if(beyond.length){msg=beyond.join(' and ')+': '+n+' nights, past the online booking window. Booking direct is how to hold dates this far out; send the inquiry and we will confirm.';avail.classList.add('note')}
+    else{var other=u==='delongpre'?'cherokee':u==='cherokee'?'delongpre':null;
+      msg=taken.join(' and ')+(taken.length>1?' are':' is')+' taken on those dates.';
+      if(other&&cal[other]&&!overlaps(cal[other].blocked,a,d))msg+=' '+NAMES[other]+' is open; pick it above or change the dates.';
+      else msg+=' Try different dates, or tick the general inquiry box and tell us what you need.';
+      avail.classList.add('taken');send.disabled=true}
+    if(!send.disabled&&n<30)msg+=' We host 30 nights or more; send it anyway and we will see what we can do.';
+    avail.textContent=msg;
+    document.getElementById('subject').value='Inquiry: '+(u==='either'?'Either home':NAMES[u])+', '+a+' to '+d+' ('+n+' nights, '+(open.length?'open':beyond.length?'beyond booking window':'TAKEN')+')';
+  }
+  ['change','input'].forEach(function(e){form.addEventListener(e,function(ev){if(ev.target.name==='unit'||ev.target===arrive||ev.target===depart||ev.target===general)check()})});
+  general.addEventListener('change',function(){form.classList.toggle('is-general',general.checked);arrive.required=depart.required=!general.checked;if(general.checked)document.getElementById('subject').value='General inquiry from hollywoodhideaways.com';check()});
+  document.querySelectorAll('a[data-unit]').forEach(function(a){a.addEventListener('click',function(){var r=form.querySelector('input[name=unit][value='+a.dataset.unit+']');if(r){r.checked=true;check()}})});
+
+  form.addEventListener('submit',function(ev){
+    ev.preventDefault();status.textContent='';
+    if(!form.checkValidity()){form.reportValidity();return}
+    if(send.disabled)return;
+    var data={};new FormData(form).forEach(function(v,k){data[k]=v});
+    send.disabled=true;status.textContent='Sending…';
+    fetch(form.action,{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(data)})
+      .then(function(r){return r.json()})
+      .then(function(j){
+        if(j.ok){form.innerHTML='<p class="done">Thank you. Your inquiry is on its way and we answer the same day.</p>';return}
+        send.disabled=false;status.textContent=(j.errors||[]).map(function(e){return e.message}).join(' ')||'Please check the form and try again.';
+      })
+      .catch(function(){send.disabled=false;status.textContent='That did not go through. Email us at stay@hollywoodhideaways.com and we will sort it out.';});
+  });
+})();
+</script>
 </body>
 </html>

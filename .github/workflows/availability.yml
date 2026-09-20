@@ -1,0 +1,25 @@
+name: Refresh availability
+on:
+  schedule:
+    - cron: "17 */6 * * *"   # every six hours
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/availability.py
+        env:
+          ICAL_DELONGPRE: ${{ secrets.ICAL_DELONGPRE }}
+          ICAL_CHEROKEE: ${{ secrets.ICAL_CHEROKEE }}
+      - name: Commit if changed
+        run: |
+          # The "fetched" timestamp changes every run; commit only when the ranges do.
+          if git diff --ignore-matching-lines='"fetched"' --quiet -- availability.json; then
+            git checkout -- availability.json; echo "no change"; exit 0
+          fi
+          git config user.name "availability-bot"
+          git config user.email "stay@hollywoodhideaways.com"
+          git commit -am "Refresh availability" && git push
