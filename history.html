@@ -55,6 +55,10 @@ figcaption{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:14px;c
 .sources{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:14px;color:var(--muted)}
 .sources li{margin:4px 0;word-break:break-word}
 .cta{display:inline-block;margin-top:10px;background:var(--green);color:#fff;text-decoration:none;padding:12px 20px;border-radius:8px;font-family:-apple-system,Helvetica,Arial,sans-serif;font-weight:600;font-size:16px}
+.gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 14px;margin:22px 0}
+.gallery figure{flex:0 0 min(86%,520px);scroll-snap-align:start;margin:0}
+.gallery img{width:100%;height:340px;object-fit:cover}
+.hint{font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:13px;color:var(--muted);margin:-8px 0 0}
 footer{padding:28px 0 48px;color:var(--muted);font-family:-apple-system,Helvetica,Arial,sans-serif;font-size:14px}
 footer a{color:var(--muted)}
 </style>
@@ -67,7 +71,7 @@ footer a{color:var(--muted)}
 <header class="hero">
   <h1>A 1916 bungalow at De Longpre and Cherokee</h1>
   <p>The house, the man who designed it, the painter the street is named for, and the silent-film star whose statue stands across the road.</p>
-  <nav class="toc"><a href="#permit">The permit</a><a href="#hurst">Frederick C. Hurst</a><a href="#higgins">The Higgins question</a><a href="#delongpre">Paul de Longpré</a><a href="#park">De Longpre Park &amp; Valentino</a><a href="#sources">Sources</a></nav>
+  <nav class="toc"><a href="#permit">The permit</a><a href="#hurst">Frederick C. Hurst</a><a href="#higgins">The Higgins question</a><a href="#delongpre">Paul de Longpré</a><a href="#park">De Longpre Park &amp; Valentino</a><a href="#rabbit-holes">Rabbit holes</a><a href="#sources">Sources</a></nav>
 </header>
 
 <section id="permit">
@@ -87,30 +91,38 @@ footer a{color:var(--muted)}
     <figure><img src="img/permit-1916-house.jpg" alt="Full 1916 building permit No. 2846 for 6655 De Longpre Ave" loading="lazy"><figcaption>The full permit for the house. <a href="img/permit-1916-house.jpg">View larger</a></figcaption></figure>
     <figure><img src="img/permit-1916-garage.jpg" alt="Full 1916 garage permit No. 4035 signed by F. C. Hurst" loading="lazy"><figcaption>The garage permit. <a href="img/permit-1916-garage.jpg">View larger</a></figcaption></figure>
   </div>
-  <p>Hollywood had joined the City of Los Angeles only six years earlier, in 1910. Nestor had opened Hollywood's first film studio at Sunset and Gower in 1911, and in 1913 Cecil B. DeMille and Jesse Lasky rented a barn at Selma and Vine to shoot <em>The Squaw Man</em>. This house went up a few blocks from both, in the years the neighborhood was turning from orchards into the movie capital.</p>
+  <p>Hollywood had <a href="https://en.wikipedia.org/wiki/Hollywood,_Los_Angeles">joined the City of Los Angeles only six years earlier</a>, in 1910. <a href="https://en.wikipedia.org/wiki/Nestor_Film_Company">Nestor</a> had opened Hollywood's first film studio at Sunset and Gower in 1911, and in 1913 <a href="https://en.wikipedia.org/wiki/Cecil_B._DeMille">Cecil B. DeMille</a> and <a href="https://en.wikipedia.org/wiki/Jesse_L._Lasky">Jesse Lasky</a> <a href="https://en.wikipedia.org/wiki/Hollywood_Heritage_Museum">rented a barn at Selma and Vine</a> to shoot <em><a href="https://en.wikipedia.org/wiki/The_Squaw_Man_(1914_film)">The Squaw Man</a></em>. This house went up a few blocks from both, in the years the neighborhood was turning from orchards into the movie capital.</p>
 </section>
 
 <section id="hurst">
   <h2>Frederick C. Hurst, the architect of Bisbee</h2>
-  <p>Frederick C. Hurst (1856–1923), a native of Winnipeg, came to Bisbee, Arizona, in 1902 as architect for the Copper Queen mining company. On January 1, 1906, he went out on his own, opening an office in the Muheim Block at the foot of Brewery Gulch, a building he most likely designed. Over that decade he shaped much of the town that still stands: the Copper Queen Hospital and the Bisbee Woman's Club (1902), the Pythian Castle (1904), Central School (1905), City Hall and the fire station with its bell tower (1906), the Copper Queen Library and Post Office (1906–07), and many of the Main Street buildings rebuilt after the fire of 1908. Some say his most beautiful was the Orpheum Theatre, a pie-shaped building at the mouth of Brewery Gulch; it was demolished in 1993, and the spot is now Goar Park.</p>
-  <p>Hurst moved to Phoenix in 1911, joining the firm of L. D. Knipe (Tempe's City Hall and its First National Bank), and in 1922 became Phoenix's building inspector. In 1916, the permits show, he was also designing and building in Hollywood, from a San Gabriel address. He died in Phoenix on September 22, 1923, struck by a car while crossing First and Washington streets. This house is the only Los Angeles work of his we have been able to document.</p>
-  <p class="note">Much of this comes from research the Bisbee Mining &amp; Historical Museum generously did for us in 2014. As their researcher put it, Hurst and his contemporary Henry Trost "were apparently very humble men, and it is difficult to document who worked on many of the buildings."</p>
+  <p>Frederick C. Hurst (1856–1923), a native of <a href="https://en.wikipedia.org/wiki/Winnipeg">Winnipeg</a>, came to <a href="https://en.wikipedia.org/wiki/Bisbee,_Arizona">Bisbee, Arizona</a>, in 1902 as architect for the <a href="https://en.wikipedia.org/wiki/Copper_Queen_Mine">Copper Queen mining company</a>. On January 1, 1906, he went out on his own, opening an office in the Muheim Block at the foot of Brewery Gulch, a building he most likely designed. Over that decade he shaped much of the town that still stands: the Copper Queen Hospital and the Bisbee Woman's Club (1902), the <a href="https://en.wikipedia.org/wiki/Bisbee_Historic_District">Pythian Castle</a> (1904), Central School (1905), City Hall and the fire station with its bell tower (1906), the <a href="https://www.bisbeeaz.gov/2348/Library-History">Copper Queen Library and Post Office</a> (1906–07), and many of the Main Street buildings rebuilt after the fire of 1908. Some say his most beautiful was the Orpheum Theatre, a pie-shaped building at the mouth of Brewery Gulch; it was demolished in 1993, and the spot is now Goar Park.</p>
+  <div class="gallery" aria-label="Buildings by F. C. Hurst in Bisbee">
+    <figure><img src="img/hurst-library-post-office.jpg" alt="The Copper Queen Library and Bisbee Post Office, a three-story arcaded brick building" loading="lazy"><figcaption><a href="https://www.bisbeeaz.gov/2348/Library-History">Copper Queen Library and Post Office</a>, 1906–07. Photo: Marine 69-71, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Bisbee-Bisbee_Post_Office-1900_and_Copper_Queen_Library-1907.JPG">Wikimedia Commons</a></figcaption></figure>
+    <figure><img src="img/hurst-city-hall.jpg" alt="Bisbee's old City Hall and fire hall, sandstone with a bell tower and CH ironwork balcony" loading="lazy"><figcaption>Old City Hall and fire hall, with its bell tower and "CH" ironwork. Photo: Marine 69-71, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Bisbee-Old_City_Hall-1906.JPG">Wikimedia Commons</a></figcaption></figure>
+    <figure><img src="img/hurst-pythian-castle.jpg" alt="The Pythian Castle in Bisbee, a brick building with a corner tower" loading="lazy"><figcaption>The <a href="https://en.wikipedia.org/wiki/Knights_of_Pythias">Pythian</a> Castle, 1904. Photo: Clay Gilliland, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Pythian_Castle_Bisbee_AZ_(9280245692).jpg">Wikimedia Commons</a></figcaption></figure>
+    <figure><img src="img/hurst-womans-club.jpg" alt="The Bisbee Woman's Club clubhouse" loading="lazy"><figcaption>The <a href="https://en.wikipedia.org/wiki/Bisbee_Woman%27s_Club_Clubhouse">Bisbee Woman's Club</a>, 1902. Photo: Karen Fasimpaur, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Bisbee_Woman%27s_Club_Clubhouse,_Bisbee,_AZ.jpg">Wikimedia Commons</a></figcaption></figure>
+    <figure><img src="img/hurst-muheim-block.jpg" alt="The Muheim Block at the foot of Brewery Gulch, Bisbee" loading="lazy"><figcaption>The Muheim Block, 1905, where Hurst kept his office. Photo: Scotwriter21, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, <a href="https://commons.wikimedia.org/wiki/File:Bisbee_SW01.jpg">Wikimedia Commons</a></figcaption></figure>
+  </div>
+  <p class="hint">Swipe or scroll sideways for more of Hurst's Bisbee.</p>
+  <p>Hurst moved to Phoenix in 1911, joining the firm of L. D. Knipe (Tempe's City Hall and its First National Bank), and in 1922 became Phoenix's building inspector. In 1916, the permits show, he was also designing and building in Hollywood, from a San Gabriel address. He died in Phoenix in September 1923, struck by a car on First Street near Washington. This house is the only Los Angeles work of his we have been able to document.</p>
+  <p class="note">Much of this comes from research the <a href="https://www.bisbeemuseum.org/">Bisbee Mining &amp; Historical Museum</a> generously did for us in 2014. As their researcher put it, Hurst and his contemporary <a href="https://en.wikipedia.org/wiki/Henry_C._Trost">Henry Trost</a> "were apparently very humble men, and it is difficult to document who worked on many of the buildings."</p>
 </section>
 
 <section id="higgins">
   <h2>The Higgins question</h2>
-  <p>Bisbee had another famous name: Thomas P. Higgins. Born in Boyle, County Roscommon, Ireland, in 1844, he arrived in Bisbee in 1877, dug his own tunnel into the hillside, and struck copper. He sold the Higgins mine around 1902, reportedly for $1 million, and put his fortune into Los Angeles real estate, building the Bisbee Hotel downtown and, in 1910, the Higgins Building at Second and Main, now a Los Angeles Historic-Cultural Monument.</p>
-  <p>He never married, and he had been cut off from his family for years. Once he was rich, the story goes, he hired a detective to find them. He brought his widowed sister and a small army of nieces and nephews to Los Angeles, at one point some 25 relatives living in his mansion on Magnolia Avenue, paid for their educations, and supported the ones who settled in California. He lies in the family mausoleum he built at Calvary Cemetery in East Los Angeles, said to have been the grandest of its day.</p>
+  <p>Bisbee had another famous name: <a href="https://en.wikipedia.org/wiki/Higgins_Building">Thomas P. Higgins</a>. Born in <a href="https://en.wikipedia.org/wiki/Boyle,_County_Roscommon">Boyle, County Roscommon</a>, Ireland, in 1844, he arrived in Bisbee in 1877, dug his own tunnel into the hillside, and struck copper. He sold the Higgins mine around 1902, reportedly for $1 million, and put his fortune into Los Angeles real estate, building the Bisbee Hotel downtown and, in 1910, <a href="https://en.wikipedia.org/wiki/Higgins_Building">the Higgins Building at Second and Main</a>, now a Los Angeles Historic-Cultural Monument.</p>
+  <p>He never married, and he had been cut off from his family for years. Once he was rich, the story goes, he hired a detective to find them. He brought his widowed sister and a small army of nieces and nephews to Los Angeles, at one point some 25 relatives living in his mansion on Magnolia Avenue, paid for their educations, and supported the ones who settled in California. He lies in the family mausoleum he built at <a href="https://en.wikipedia.org/wiki/Calvary_Cemetery_(Los_Angeles)">Calvary Cemetery in East Los Angeles</a>, said to have been the grandest of its day.</p>
   <p>So: a Bisbee architect designs and builds a home in 1916 for a Mrs. Sarah J. Higgins. Was she one of Thomas Higgins's relatives, set up in a Hollywood double bungalow like the others he looked after? It's a lovely theory, and the Bisbee connection makes it plausible, but nothing ever connected them. Sarah's name is not on the mausoleum's plates, the Bisbee museum's files on the Higgins family don't include a Sarah, and Higgins is a common name. The answer turned up in the city directories.</p>
-  <p>One more clue sat on the permit itself: Sarah's address, 6633 Hollywood Boulevard. In 1912 a Mrs. Mabel Grady had a two-story brick building of stores and four apartments put up there, designed and built by Frank L. Meline, who would become one of Hollywood's biggest developers of the 1920s. And that is where Sarah turns up. The Los Angeles city directory for 1915 lists "Higgins, Sarah J., widow of A. I., bakery, 6633 Hollywood Blvd," and by 1916 the listing reads "restaurant." She lived in a rooming house on Whitley Avenue full of "photo players," then on McCadden Place.</p>
+  <p>One more clue sat on the permit itself: Sarah's address, 6633 Hollywood Boulevard. In 1912 a Mrs. Mabel Grady had a two-story brick building of stores and four apartments put up there, designed and built by <a href="https://en.wikipedia.org/wiki/Frank_L._Meline">Frank L. Meline</a>, who would become one of Hollywood's biggest developers of the 1920s. And that is where Sarah turns up. The Los Angeles city directory for 1915 lists "Higgins, Sarah J., widow of A. I., bakery, 6633 Hollywood Blvd," and by 1916 the listing reads "restaurant." She lived in a rooming house on Whitley Avenue full of "photo players," then on McCadden Place.</p>
   <p>Her husband, Alvin I. Higgins, was born in Indiana in 1861 and died in Los Angeles in 1909, leaving Sarah with a daughter, Josephine, born in Chicago in 1896. So the answer to the Higgins question is probably the plainer one: a different Higgins family altogether. Sarah seems to have been a widow who ran a bakery and then a restaurant on Hollywood Boulevard, saved her money, and in 1916 hired a Bisbee architect to build a double bungalow she could rent out. Not a copper king's poor relation, then, but something better: a widow making her own way in early Hollywood. Two small businesswomen, Mabel Grady and Sarah Higgins, on one block of the Boulevard. By family records, Sarah lived until 1960.</p>
 </section>
 
 <section id="delongpre">
   <h2>Paul de Longpré, the "King of Flowers"</h2>
   <figure><img src="img/dlp-roses-bumblebees-1899.jpg" alt="Paul de Longpré, Roses and Bumblebees, 1899: pink roses against a soft gray sky with two bumblebees" loading="lazy"><figcaption>Paul de Longpré, <em>Roses and Bumblebees</em>, 1899.</figcaption></figure>
-  <p>The street out front is named for Paul de Longpré (1855–1911), a French painter from near Lyon who became one of the most famous flower painters in America. He moved to Los Angeles in 1899, and Daeida Wilcox, one of the founders of Hollywood, traded him three lots on Cahuenga Avenue, just north of what is now Hollywood Boulevard, for three of his paintings.</p>
-  <p>There, in 1901, he built a Mission Revival mansion and surrounded it with some three acres of gardens full of the flowers he painted. He opened the gardens and his gallery to the public, and visitors came out on the "Balloon Route" trolley, up to 8,000 a month. It is often called Hollywood's first tourist attraction, a decade before the movies arrived.</p>
+  <p>The street out front is named for <a href="https://en.wikipedia.org/wiki/Paul_de_Longpr%C3%A9">Paul de Longpré (1855–1911)</a>, a French painter from near Lyon who became one of the most famous flower painters in America. He moved to Los Angeles in 1899, and <a href="https://en.wikipedia.org/wiki/Daeida_Wilcox_Beveridge">Daeida Wilcox</a>, one of the founders of Hollywood, traded him three lots on Cahuenga Avenue, just north of what is now Hollywood Boulevard, for three of his paintings.</p>
+  <p>There, in 1901, he built a <a href="https://en.wikipedia.org/wiki/Mission_Revival_architecture">Mission Revival</a> mansion and surrounded it with some three acres of gardens full of the flowers he painted. He opened the gardens and his gallery to the public, and visitors came out on the <a href="https://en.wikipedia.org/wiki/Balloon_Route">"Balloon Route" trolley</a>, up to 8,000 a month. It is often called Hollywood's first tourist attraction, a decade before the movies arrived.</p>
   <figure><img src="img/dlp-postcard-1912.jpg" alt="Postcard of Paul de Longpre's Art Gallery, Hollywood, Los Angeles, about 1912" loading="lazy"><figcaption>"Paul de Longpre's Art Gallery, Hollywood, Los Angeles, Cal." Tichnor Brothers postcard, about 1912.</figcaption></figure>
   <div class="pair">
     <figure><img src="img/dlp-roses-bumblebee-1898.jpg" alt="Paul de Longpré, Roses and Bumblebee, 1898" loading="lazy"><figcaption><em>Roses and Bumblebee</em>, 1898. His roses often come with a visitor: a bee flying into the frame.</figcaption></figure>
@@ -122,8 +134,8 @@ footer a{color:var(--muted)}
 
 <section id="park">
   <h2>De Longpre Park and Valentino's statue</h2>
-  <p>Directly across the street is De Longpre Park, 1.4 acres laid out in 1924. It holds two memorials to Rudolph Valentino, the silent-film idol who died in 1926 at 31.</p>
-  <p>The first, <em>Aspiration</em>, is a gold-leafed bronze of a nude young man gazing upward, standing on a black marble globe, by the sculptor Roger Noble Burnham. It was paid for by fans "from every walk of life, in all parts of the world," after the city council balked at putting up a monument itself, and the actress Dolores del Río unveiled it in May 1930, around what would have been Valentino's 35th birthday. It began as a fountain. In 1952 it was found knocked off its base on the lawn; the city took it away for repairs, and it did not come back for about twenty years.</p>
+  <p>Directly across the street is De Longpre Park, 1.4 acres laid out in 1924. It holds two memorials to <a href="https://en.wikipedia.org/wiki/Rudolph_Valentino">Rudolph Valentino</a>, the silent-film idol who died in 1926 at 31.</p>
+  <p>The first, <em>Aspiration</em>, is a gold-leafed bronze of a nude young man gazing upward, standing on a black marble globe, by the sculptor <a href="https://en.wikipedia.org/wiki/Roger_Noble_Burnham">Roger Noble Burnham</a>. It was paid for by fans "from every walk of life, in all parts of the world," after the city council balked at putting up a monument itself, and the actress <a href="https://en.wikipedia.org/wiki/Dolores_del_R%C3%ADo">Dolores del Río</a> unveiled it in May 1930, around what would have been Valentino's 35th birthday. It began as a fountain. In 1952 it was found knocked off its base on the lawn; the city took it away for repairs, and it did not come back for about twenty years.</p>
   <figure><img src="img/park-valentino-aspiration.jpg" alt="Aspiration, the Rudolph Valentino memorial statue in De Longpre Park, a bronze figure on a black marble globe" loading="lazy"><figcaption><em>Aspiration</em> in De Longpre Park, 2024. Photo: Clyde Charles Brown, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>, via <a href="https://commons.wikimedia.org/wiki/File:Rudolph_Valentino_Memorial_in_De_Longpre_Park,_Los_Angeles,_California,_US.jpg">Wikimedia Commons</a>.</figcaption></figure>
   <p>The second is a bronze bust of Valentino by Richard Ellis, set on a tall white pedestal nearby at the end of the 1970s and paid for from the estate of a devoted fan. The park was renovated in 2020 and has a playground and plenty of shade. It's a favorite with neighborhood dog owners, and with our guests.</p>
 </section>
@@ -132,6 +144,39 @@ footer a{color:var(--muted)}
   <h2>Stay in the story</h2>
   <p>Both halves of the 1916 duplex are furnished homes for stays of a month or more, each with its own private garden behind the hedge.</p>
   <a class="cta" href="/#homes">See the homes</a>
+</section>
+
+<section id="rabbit-holes">
+  <h2>Rabbit holes</h2>
+  <p>Places, people and buildings from this story, for anyone who wants to keep going.</p>
+  <ul class="sources" style="columns:2;column-gap:28px">
+      <li><a href="https://en.wikipedia.org/wiki/Bisbee_Historic_District">Bisbee Historic District</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Copper_Queen_Mine">Copper Queen Mine</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Phelps_Dodge">Phelps Dodge</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Henry_C._Trost">Henry C. Trost</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Tombstone,_Arizona">Tombstone, Arizona</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/St._Patrick%27s_Roman_Catholic_Church_(Bisbee,_Arizona)">St. Patrick's Church, Bisbee</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Albert_C._Martin_Sr.">Albert C. Martin Sr.</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Higgins_Building">Higgins Building</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Copper_Queen_Hotel">Copper Queen Hotel</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Loyola_Marymount_University">Loyola Marymount University</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Mosinee,_Wisconsin">Mosinee, Wisconsin</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Frank_L._Meline">Frank L. Meline</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Daeida_Wilcox_Beveridge">Daeida Wilcox Beveridge</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Balloon_Route">Balloon Route</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Hollywood_Boulevard">Hollywood Boulevard</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Sunset_Boulevard">Sunset Boulevard</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Hollywood_Walk_of_Fame">Hollywood Walk of Fame</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Grauman%27s_Chinese_Theatre">Grauman's Chinese Theatre</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Hollywood_Pantages_Theatre">Hollywood Pantages Theatre</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Hollywood_Bowl">Hollywood Bowl</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Rudolph_Valentino">Rudolph Valentino</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Holy_Cross_Cemetery_(Culver_City,_California)">Holy Cross Cemetery, Culver City</a></li>
+      <li><a href="https://en.wikipedia.org/wiki/Evergreen_Cemetery_(Los_Angeles)">Evergreen Cemetery, Los Angeles</a></li>
+      <li><a href="https://www.stpatsbisbee.com/in-honour-of-Tom-Higgins">"Tom Higgins 1844–1920: A quiet philanthropist"</a>, St. Patrick Parish, Bisbee</li>
+      <li><a href="https://prism.dbs.lacity.gov/">LADBS PRISM</a>, where the city's old permits live</li>
+      <li><a href="https://chroniclingamerica.loc.gov/">Chronicling America</a>, the <em>Bisbee Daily Review</em> and more, 1900s–1920s</li>
+  </ul>
 </section>
 
 <section id="sources">
